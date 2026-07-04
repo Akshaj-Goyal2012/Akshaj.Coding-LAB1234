@@ -1,0 +1,101 @@
+Player name,club,country,age,position,overall,Pace_Div,Shooting_Han,Passing_Kic,Dribbling_Ref,Defending_Spd,Physical_Pos
+Jude Bellingham,Real Madrid,England,21,CAM,90,80,85,83,88,78,85
+Martin Ødegaard,Arsenal,Norway,25,CAM,89,77,82,89,88,58,63
+Florian Wirtz,Bayer Leverkusen,Germany,21,CAM,88,81,84,87,89,53,68
+Debinha,Kansas City Current,Brazil,32,CAM,88,81,84,87,91,46,68
+Jamal Musiala,Bayern Munich,Germany,21,CAM,87,84,81,80,90,63,64
+Bruno Fernandes,Manchester United,Portugal,30,CAM,87,75,85,89,83,69,78
+Rose Lavelle,NJ/NY Gotham FC,USA,29,CAM,87,84,80,83,89,54,69
+Jill Roord,Manchester City,Netherlands,27,CAM,86,75,82,82,84,66,76
+James Maddison,Tottenham Hotspur,England,27,CAM,85,73,81,86,85,54,65
+Virgil van Dijk,Liverpool,Netherlands,33,CB,89,78,60,71,72,89,86
+Mapi León,FC Barcelona,Spain,29,CB,89,71,75,83,79,90,81
+Rúben Dias,Manchester City,Portugal,27,CB,88,63,40,66,68,89,87
+Antonio Rüdiger,Real Madrid,Germany,31,CB,88,82,54,71,70,86,84
+Wendie Renard,Lyon,France,34,CB,88,45,71,72,73,89,84
+William Saliba,Arsenal,France,23,CB,87,82,40,71,74,87,83
+Alessandro Bastoni,Inter Milan,Italy,25,CB,87,74,48,77,75,88,82
+Marquinhos,Paris Saint-Germain,Brazil,30,CB,87,79,56,75,76,89,80
+Linhart,Freiburg,Austria,27,CB,87,70,42,65,68,88,83
+Gabriel Magalhães,Arsenal,Brazil,26,CB,86,68,42,63,66,86,84
+Nico Schlotterbeck,Borussia Dortmund,Germany,24,CB,86,78,55,72,74,85,83
+Gleison Bremer,Juventus,Brazil,27,CB,85,77,50,60,68,86,84
+John Stones,Manchester City,England,30,CB,85,72,50,77,79,85,78
+Rodri,Manchester City,Spain,28,CDM,91,66,80,86,84,87,85
+Declan Rice,Arsenal,England,25,CDM,87,77,68,77,78,86,83
+Hakan Çalhanoğlu,Inter Milan,Turkey,30,CDM,86,68,81,88,82,77,73
+Aurélien Tchouaméni,Real Madrid,France,24,CDM,85,71,70,79,80,84,82
+Aitana Bonmatí,FC Barcelona,Spain,26,CM,91,81,86,86,91,78,75
+Alexia Putellas,FC Barcelona,Spain,30,CM,91,82,90,90,91,72,78
+Kevin De Bruyne,Manchester City,Belgium,33,CM,90,67,87,94,87,65,78
+Federico Valverde,Real Madrid,Uruguay,26,CM,88,88,80,84,84,81,82
+Bernardo Silva,Manchester City,Portugal,30,CM,88,76,78,86,92,70,69
+Patri Guijarro,FC Barcelona,Spain,26,CM,88,72,81,85,84,83,79
+Frenkie de Jong,FC Barcelona,Netherlands,27,CM,87,80,69,86,88,78,78
+Ilkay Gündogan,Manchester City,Germany,33,CM,87,64,80,86,85,74,72
+Alexis Mac Allister,Liverpool,Argentina,25,CM,86,72,79,84,85,77,78
+Nicolò Barella,Inter Milan,Italy,27,CM,86,79,76,83,84,77,81
+Pedri,FC Barcelona,Spain,21,CM,86,77,75,86,90,78,77
+Kim Little,Arsenal,Scotland,34,CM,86,74,81,84,86,72,73
+Grace Geyoro,Paris Saint-Germain,France,27,CM,86,80,79,81,85,78,75
+Vitinha,Paris Saint-Germain,Portugal,24,CM,85,78,77,84,87,74,70
+Alisson Becker,Liverpool,Brazil,31,GK,89,86,85,85,89,54,89
+Gianluigi Donnarumma,Paris Saint-Germain,Italy,25,GK,89,90,85,79,89,52,85
+Thibaut Courtois,Real Madrid,Belgium,32,GK,89,85,89,76,90,46,88
+Marc-André ter Stegen,FC Barcelona,Germany,32,GK,89,86,85,89,91,47,86
+Ederson,Manchester City,Brazil,31,GK,88,86,82,91,86,64,86
+Jan Oblak,Atlético Madrid,Slovenia,31,GK,88,85,87,78,89,43,87
+Gregor Kobel,Borussia Dortmund,Switzerland,26,GK,88,87,84,74,89,44,89
+Christiane Endler,Lyon,Chile,33,GK,88,86,86,84,89,47,87
+Martin Maignan,AC Milan,France,29,GK,87,85,83,82,89,51,86
+Emiliano Martínez,Aston Villa,Argentina,32,GK,87,85,83,82,88,56,85
+Yann Sommer,Inter Milan,Switzerland,35,GK,87,86,84,81,88,48,85
+Mary Earps,Paris Saint-Germain,England,31,GK,86,85,83,78,87,50,85
+Alex Meret,Napoli,Italy,27,GK,86,85,83,76,87,45,83
+Theo Hernández,AC Milan,France,26,LB,87,95,72,79,82,80,84
+Sakina Karchaoui,Paris Saint-Germain,France,28,LB,87,89,68,82,85,80,72
+João Cancelo,Al Hilal,Portugal,30,LB,86,81,73,85,86,79,71
+Fridolina Rolfö,FC Barcelona,Sweden,30,LB,86,81,84,84,85,79,81
+Andrew Robertson,Liverpool,Scotland,30,LB,85,80,61,81,80,81,76
+Kingsley Coman,Bayern Munich,France,28,LM,85,89,78,79,87,30,63
+Vinícius Júnior,Real Madrid,Brazil,24,LW,90,95,84,81,91,32,69
+Guro Reiten,Chelsea,Norway,30,LW,88,84,81,86,86,53,66
+Son Heung-min,Tottenham Hotspur,South Korea,32,LW,87,87,89,84,84,42,69
+Mallory Swanson,Chicago Red Stars,USA,26,LW,87,93,82,81,87,42,69
+Khvicha Kvaratskhelia,Napoli,Georgia,23,LW,86,84,82,81,87,41,72
+Rafael Leão,AC Milan,Portugal,25,LW,86,93,80,76,87,36,76
+Lauren Hemp,Manchester City,England,24,LW,86,89,79,81,85,46,77
+Nico Williams,Athletic Bilbao,Spain,22,LW,85,93,77,80,86,38,68
+Alejandro Grimaldo,Bayer Leverkusen,Spain,28,LWB,85,84,77,87,84,77,72
+Jules Koundé,FC Barcelona,France,25,RB,86,84,45,75,79,85,78
+Trent Alexander-Arnold,Liverpool,England,25,RB,86,73,69,89,80,80,73
+Joshua Kimmich,Bayern Munich,Germany,29,RB,86,68,74,89,84,81,77
+Dani Carvajal,Real Madrid,Spain,32,RB,86,79,54,79,80,82,82
+Kieran Trippier,Newcastle United,England,34,RB,85,70,64,87,79,80,72
+Leroy Sané,Bayern Munich,Germany,28,RM,86,89,82,79,86,38,70
+Caroline Graham Hansen,FC Barcelona,Norway,29,RW,90,89,86,88,90,48,75
+Mohamed Salah,Liverpool,Egypt,32,RW,89,89,87,82,88,45,75
+Lionel Messi,Inter Miami,Argentina,37,RW,88,79,87,87,92,33,64
+Phil Foden,Manchester City,England,24,RW,88,86,85,86,89,57,65
+Kadidiatou Diani,Lyon,France,29,RW,88,88,83,83,88,44,79
+Bukayo Saka,Arsenal,England,23,RW,87,86,82,82,87,65,69
+Beth Mead,Arsenal,England,29,RW,87,84,83,83,85,48,70
+Ousmane Dembélé,Paris Saint-Germain,France,27,RW,86,93,77,82,89,36,66
+Kylian Mbappé,Real Madrid,France,25,ST,91,97,90,81,92,36,76
+Erling Haaland,Manchester City,Norway,24,ST,91,88,92,66,81,45,88
+Harry Kane,Bayern Munich,England,31,ST,90,65,93,84,83,47,83
+Sam Kerr,Chelsea,Australia,31,ST,90,84,88,75,87,42,83
+Lautaro Martínez,Inter Milan,Argentina,27,ST,89,81,88,73,85,48,84
+Ada Hegerberg,Lyon,Norway,29,ST,89,77,89,76,84,38,77
+Sophia Smith,Portland Thorns,USA,24,ST,89,93,85,79,88,41,79
+Antoine Griezmann,Atlético Madrid,France,33,ST,88,79,87,86,87,54,73
+Robert Lewandowski,FC Barcelona,Poland,36,ST,88,75,88,79,85,43,82
+Marie-Antoinette Katoto,Paris Saint-Germain,France,25,ST,88,83,87,75,84,40,78
+Ewa Pajor,FC Barcelona,Poland,27,ST,87,89,86,74,85,41,76
+Alex Morgan,San Diego Wave,USA,35,ST,87,79,87,80,84,45,77
+Khadija Shaw,Manchester City,Jamaica,27,ST,87,78,86,68,80,45,87
+Cristiano Ronaldo,Al Nassr,Portugal,39,ST,86,77,88,75,80,34,75
+Alexander Isak,Newcastle United,Sweden,24,ST,85,86,84,78,85,37,73
+Loïs Openda,RB Leipzig,Belgium,24,ST,85,93,82,69,80,40,80
+Dušan Vlahović,Juventus,Serbia,24,ST,85,79,85,66,78,38,79
+Diogo Jota,Liverpool,Portugal,27,ST,85,83,86,74,83,56,77
