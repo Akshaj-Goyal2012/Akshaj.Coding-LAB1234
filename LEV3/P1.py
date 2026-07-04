@@ -395,9 +395,7 @@ for kk in user_choice:
 
 query = query[:-5]   
 
-print(query)
 
-input()
 
 if query != '':
     selected = [car for car in Car if eval(query)]
