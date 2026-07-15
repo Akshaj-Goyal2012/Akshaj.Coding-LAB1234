@@ -4,6 +4,15 @@ with open ('LEV3/fc25_top_100_no_rank_by_position.csv', mode='r') as file:
     csvFile=csv.DictReader(file)
     all_cards=list(csvFile)
 
+def display_card(card):
+    max_chars=0
+    for keys in card:
+        if len(keys)>max_chars:
+            max_chars=len(keys)
+    for keys in card:
+        print(keys,(max_chars-len(keys))*' ',':',card[keys])        
+
+
 #Intro
 
 print('Welcome to Baller Clash.')
@@ -25,8 +34,13 @@ chance=random.randint(0,1)
 
 if chance ==0:
     chance='Player'
-else:
+elif chance==1:
     chance='Computer'
+
+mapping_dict={}
+
+for key in Releventkeys:
+  mapping_dict[key[0]] = key
 
 game = True
 
@@ -43,7 +57,7 @@ while game:
     print('It is',chance, 'Chance now')
     print()
     print('The player cards are:')
-    
+    display_card(player_cards)
 
 
  
