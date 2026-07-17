@@ -12,7 +12,20 @@ def display_card(card):
     for keys in card:
         print(keys,(max_chars-len(keys))*' ',':',card[keys])        
 
+def determine_winner(m1, m2, order = 1):
+  # Explain why this concise code is useful
+  dct = {'player': m1, 'computer': m2}
+  v = list(dct.values())
+  k = list(dct.keys())
 
+  if m1 == m2:
+    return 'draw'
+  else:
+    if order == 1:
+      return k[v.index(max(v))]
+    else:
+      return k[v.index(min(v))]
+    
 #Intro
 
 print('Welcome to Baller Clash.')
@@ -32,10 +45,7 @@ table_cards=[]
 
 chance=random.randint(0,1)
 
-if chance ==0:
-    chance='Player'
-elif chance==1:
-    chance='Computer'
+chance='Player'
 
 mapping_dict={}
 
@@ -57,8 +67,42 @@ while game:
     print('It is',chance, 'Chance now')
     print()
     print('The player cards are:')
-    display_card(player_cards)
+    display_card(player)
+    print()
 
+    if chance=='Player':
+        choosen_key = input("Choose a stat (O/P/S/D): ").upper()
+        if choosen_key not in list(mapping_dict.keys()):
+           print('Invalid input!!')
+        chance=='Computer'
+    elif chance=='Computer':
+        choosen_key=random.choice(list(mapping_dict.keys()))   
+        chance='Player'
+    key_requested = mapping_dict[choosen_key]
+    Value_player = player[key_requested]
+    Value_Computer=Computer[key_requested]
+    print('Player ', key_requested, 'is', Value_player)
+    print('Computer ', key_requested, 'is', Value_Computer)
+    print()
+    
+    winner = determine_winner(float(Value_player), float(Value_Computer))
+    
+    print('Player ', key_requested, 'is', Value_player)
+    print('Computer ', key_requested, 'is', Value_Computer)
+    print()
+    print('Winner is ... ', winner)
+    input()
 
- 
- 
+    if winner == 'Player':
+        player_cards.extend(table_cards)
+        table_cards.clear()
+    elif winner == 'Computer':
+        computer_cards.extend(table_cards)
+        table_cards.clear()
+
+    if len(player_cards) == 0:
+        print('Computer Won')
+        game_over = False
+    elif len(computer_cards) == 0:
+        print('Player Won')
+        game_over = False
