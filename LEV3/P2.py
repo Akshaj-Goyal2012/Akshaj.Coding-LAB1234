@@ -71,9 +71,12 @@ while game:
     print()
 
     if chance=='Player':
+        print('O = Overall, P = Physical position, D = Defending Position, S = Shooting')
         choosen_key = input("Choose a stat (O/P/S/D): ").upper()
         if choosen_key not in list(mapping_dict.keys()):
            print('Invalid input!!')
+           choosen_key=random.choice(list(mapping_dict.keys()))
+           
         chance=='Computer'
     elif chance=='Computer':
         choosen_key=random.choice(list(mapping_dict.keys()))   
