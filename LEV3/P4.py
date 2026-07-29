@@ -35,53 +35,36 @@ def triangle(x,y,l):
 
 triangle(0,100,150)
 
-import turtle
-
 def koch_curve(t, length, depth):
-    """Draws a single side of the Koch snowflake recursively."""
     if depth == 0:
         t.forward(length)
-    else:
-        # Divide the length by 3 for the smaller segments
-        length /= 3.0
-        
-        # Draw the 4 sub-segments with specific turning angles
-        koch_curve(t, length, depth - 1)
-        t.left(60)
-        koch_curve(t, length, depth - 1)
-        t.right(120)
-        koch_curve(t, length, depth - 1)
-        t.left(60)
-        koch_curve(t, length, depth - 1)
+        return
+    
+    length /= 3.0
+    koch_curve(t, length, depth - 1) 
+    t.left(60)
+    koch_curve(t, length, depth - 1) 
+    t.right(120)
+    koch_curve(t, length, depth - 1) 
+    t.left(60)
+    koch_curve(t, length, depth - 1) 
 
-def draw_snowflake(length, depth):
-    """Combines three Koch curves into an equilateral triangle snowflake."""
-    # Setup window and turtle
-    screen = turtle.Screen()
-    screen.bgcolor("white")
-    
-    t = turtle.Turtle()
-    t.speed(0)  # Fastest drawing speed
-    t.penup()
-    t.goto(-length / 2, length / 3)  # Center the snowflake roughly
-    t.pendown()
-    t.pensize(2)
-    
-    # Loop 3 times to form the base equilateral triangle
+def draw_snowflake(t, length, depth):
     for _ in range(3):
         koch_curve(t, length, depth)
         t.right(120)
-        
-    # Keep screen open until it is clicked
-    screen.exitonclick()
+t.clear()
 
-# Run the program: length = 300 pixels, recursion depth = 4
+screen = turtle.Screen()
 
 
-draw_snowflake(length=300, depth=4)
+artist = turtle.Turtle()
+artist.speed(0)
 
 
+artist.penup()
+artist.goto(-150, 90)
+artist.pendown()
 
-
-turtle.mainloop()
-    
+draw_snowflake(artist, 300, 3)
+screen.mainloop()
