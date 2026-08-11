@@ -47,10 +47,10 @@ def print_set(winner_set):
     file.write('\n\n')      
 
 def readcsvdata(tournament_name):
-  file_name = tournament_name + '.csv'
+  filename = tournament_name + '.csv'
   # Open the file
   # Read the data into a list of dictionaries
-  with open(file_name, mode ='r') as file:
+  with open(filename, mode ='r') as file:
     csvFile = csv.DictReader(file)
     tournament_data = list(csvFile)
 
