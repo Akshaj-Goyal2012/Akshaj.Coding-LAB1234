@@ -1,5 +1,4 @@
 import random
-import time
 import datetime as dt
 
 print('I know that you are lazy')
