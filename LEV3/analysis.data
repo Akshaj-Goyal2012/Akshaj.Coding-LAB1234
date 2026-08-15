@@ -1,0 +1,41 @@
+Analysis Results 
+Reporting for F1
+Total Winners : 44
+Unique Winners : 18
+Name                Country             Times Won           Years Won           
+Kimi Raikkonen      Finland             1                   ['2007']            
+Niki Lauda          Austria             1                   ['1984']            
+Alain Prost         France              4                   ['1985', '1986', '1989', '1993']
+Lewis Hamilton      Britain             7                   ['2008', '2014', '2015', '2017', '2018', '2019', '2020']
+Lando Norris        Britain             1                   ['2025']            
+Mika Hakkinen       Finland             2                   ['1998', '1999']    
+Michael Schumacher  Germany             7                   ['1994', '1995', '2000', '2001', '2002', '2003', '2004']
+Jacques Villeneuve  Canada              1                   ['1997']            
+Damon Hill          Britain             1                   ['1996']            
+Nico Rosberg        Germany             1                   ['2016']            
+Nelson Piquet       Brazil              2                   ['1983', '1987']    
+Sebastian Vettel    Germany             4                   ['2010', '2011', '2012', '2013']
+Nigel Mansell       Britain             1                   ['1992']            
+Keke Rosberg        Finland             1                   ['1982']            
+Ayrton Senna        Brazil              3                   ['1988', '1990', '1991']
+Max Verstappen      Netherlands         4                   ['2021', '2022', '2023', '2024']
+Jenson Button       Britain             1                   ['2009']            
+Fernando Alonso     Spain               2                   ['2005', '2006']    
+Reporting for Autosport
+Total Winners : 29
+Unique Winners : 14
+Name                Country             Times Won           Years Won           
+Niki Lauda          Austria             1                   ['1984']            
+Alain Prost         France              1                   ['1985']            
+Jean Alesi          France              1                   ['1989']            
+Lewis Hamilton      Britain             3                   ['2008', '2018', '2020']
+Mika Hakkinen       Finland             2                   ['1998', '1999']    
+Michael Schumacher  Germany             1                   ['1995']            
+Jacques Villeneuve  Canada              1                   ['1997']            
+Damon Hill          Britain             2                   ['1994', '1996']    
+Nelson Piquet       Brazil              1                   ['1983']            
+Sebastian Vettel    Germany             3                   ['2010', '2011', '2012']
+Nigel Mansell       Britain             4                   ['1986', '1987', '1992', '1993']
+Keke Rosberg        Finland             1                   ['1982']            
+Ayrton Senna        Brazil              3                   ['1988', '1990', '1991']
+Max Verstappen      Netherlands         5                   ['2021', '2022', '2023', '2024', '2025']
