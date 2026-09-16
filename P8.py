@@ -1,4 +1,5 @@
 import turtle
+import random
 #Screen Setup
 
 screen = turtle.Screen()
@@ -10,7 +11,7 @@ screen.tracer(0,0)
 t = turtle.Turtle()
 
 def DrawRectangle():
-    t.goto(-350,100)
+    t.goto(-350,500)
     t.fillcolor('Black')
     t.pendown()
     t.begin_fill()
@@ -49,18 +50,27 @@ def DrawBoard():
           Draw_Circle(-340 + jj*100, 450 - kk*100, 40, 'blue')
         if board[kk][jj] == 2:
           Draw_Circle(-340 + jj*100, 450 - kk*100, 40, 'red')
-screen.update()      
 
+def All_same(cells, value):
 
-DrawBoard()  
-turtle.done()        
+  allequal = True
+  
+  for cell in cells: 
+    if cell != value:
+      allequal = False
+      break
 
+  return allequal
 
+def checkVerticalWinner(value):
+  winner = False
+  for jj in range(3):
+    for kk in range(NCols):
+      cells = []
+      for cnt in range(4):
+        cells.append(board[jj+cnt][kk])
+      if All_same(cells, value):
+        winner = True
+        break
 
-
-
-
-
-
-
-
+  return winner
