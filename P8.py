@@ -52,7 +52,7 @@ def DrawBoard():
           Draw_Circle(-340 + jj*100, 450 - kk*100, 40, 'red')
 
 def All_same(cells, value):
-
+#Checks whether all are same
   allequal = True
   
   for cell in cells: 
@@ -63,7 +63,7 @@ def All_same(cells, value):
   return allequal
 
 def checkHorizontalWinner(value):
-  # Scan entire board for horizontal wins
+# Horizontal Wins
   winner = False
   for jj in range(NRows):
     for kk in range(4):
@@ -78,6 +78,7 @@ def checkHorizontalWinner(value):
   return winner
 
 def checkVerticalWinner(value):
+#Vertical Winner 
   winner = False
   for jj in range(3):
     for kk in range(NCols):
@@ -91,9 +92,8 @@ def checkVerticalWinner(value):
   return winner
 
 def checkDiagonalOneWinner(value):
-
+#Diagonal Winner
   winner = False
-  # Check for cells sloping upwards
   for jj in range(3,NRows,1):
     for kk in range(4):
       cells = []
@@ -107,7 +107,7 @@ def checkDiagonalOneWinner(value):
 
 
 def checkDiagonalTwoWinner(value):
-
+#Diagonal winner
   winner = False
   # Check for cells sloping downwards
   for jj in range(0,3,1):
@@ -128,7 +128,7 @@ def checkDiagonalTwoWinner(value):
 
 
 def checkwinner(value):
-  
+#Combined it all
   winner = checkHorizontalWinner(value)
   if not winner:
     # No winner yet
@@ -161,7 +161,8 @@ def play(x, y):
   if gameOver:
     return
   
-  col = int((x + 350)//100) # determine the column (Depending on the click location)
+  col = int((x + 350)//100)
+   # determine the column (Depending on the click location)
   
   if col < 0: 
     col = 0
@@ -171,12 +172,12 @@ def play(x, y):
   avail_cols = find_open_cols()
 
   if col in avail_cols:
-    # find the lowest available row in that column
+#Lowest available ROW!!
     available_row = lowest_row(col)
     board[available_row][col] = 1
   
     DrawBoard()
-    # Check for winner and accordingly decide whether next player or game over
+
     if checkwinner(1):
       gameOver = True
       print('Player Wins')
