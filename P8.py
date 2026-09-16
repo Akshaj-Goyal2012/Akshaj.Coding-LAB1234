@@ -62,6 +62,21 @@ def All_same(cells, value):
 
   return allequal
 
+def checkHorizontalWinner(value):
+  # Scan entire board for horizontal wins
+  winner = False
+  for jj in range(NRows):
+    for kk in range(4):
+      cells = []
+      for cnt in range(4):
+        cells.append(board[jj][kk+cnt])
+        
+      if All_same(cells, value):
+        winner = True
+        break
+
+  return winner
+
 def checkVerticalWinner(value):
   winner = False
   for jj in range(3):
@@ -74,3 +89,149 @@ def checkVerticalWinner(value):
         break
 
   return winner
+
+def checkDiagonalOneWinner(value):
+
+  winner = False
+  # Check for cells sloping upwards
+  for jj in range(3,NRows,1):
+    for kk in range(4):
+      cells = []
+      for cnt in range(4):
+        cells.append(board[jj-cnt][kk+cnt])
+      if All_same(cells, value):
+        winner = True
+        break
+
+  return winner
+
+
+def checkDiagonalTwoWinner(value):
+
+  winner = False
+  # Check for cells sloping downwards
+  for jj in range(0,3,1):
+    for kk in range(4):
+      cells = []
+      for cnt in range(4):
+        cells.append(board[jj+cnt][kk+cnt])
+      if All_same(cells, value):
+        winner = True
+        break
+
+  return winner
+
+
+
+
+
+
+
+def checkwinner(value):
+  
+  winner = checkHorizontalWinner(value)
+  if not winner:
+    # No winner yet
+    winner = checkVerticalWinner(value)
+    if not winner:
+      winner = checkDiagonalOneWinner(value)
+      if not winner:
+        winner = checkDiagonalTwoWinner(value)
+        
+  return winner
+
+      
+    
+
+
+def lowest_row(col):
+  # Find the lowest available row in a given column
+  r = -1
+  for kk in range(Nrows-1, -1, -1):
+    if board[kk][col] == 0:
+      r = kk
+      break
+      
+  return r
+
+
+def play(x, y):
+
+  global turn, gameOver
+  if gameOver:
+    return
+  
+  col = int((x + 350)//100) # determine the column (Depending on the click location)
+  
+  if col < 0: 
+    col = 0
+  if col > Ncols-1:
+    col = Ncols - 1
+
+  avail_cols = find_open_cols()
+
+  if col in avail_cols:
+    # find the lowest available row in that column
+    available_row = lowest_row(col)
+    board[available_row][col] = 1
+  
+    DrawBoard()
+    # Check for winner and accordingly decide whether next player or game over
+    if checkwinner(1):
+      gameOver = True
+      print('Player Wins')
+    else:
+      turn = 2
+  
+  if turn == 2:
+    playc()
+  
+  
+  
+def find_open_cols():
+  open_cols = [m for m in range(Ncols)]
+  full_cols = []
+
+  # Remove those columns that are full
+  for col in open_cols:
+    if lowest_row(col) == -1:
+      full_cols.append(col)
+
+  for col in full_cols:
+    open_cols.remove(col)
+
+  return open_cols
+
+def display_board():
+  for kk in range(NRows):
+    print(board[kk])
+
+
+
+def playc():
+  global turn, gameOver
+  # Find which columns are available
+  # Consider all the columns
+  cols_avail = find_open_cols()
+  #print(cols_avail)
+  # Pick up a random column from those that are open
+  if len(cols_avail) > 0:
+    col = random.choice(cols_avail)
+    available_row = lowest_row(col)
+    board[available_row][col] = 2  
+  
+  DrawBoard()
+  # Check for winner and accordingly decide whether next player or game over
+  if checkwinner(2):
+    gameOver = True
+    print('Computer Wins')
+  else:
+    turn = 1
+
+
+gameOver = False   
+turn = 1
+
+
+DrawBoard()
+screen.onclick(play)
