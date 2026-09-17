@@ -208,19 +208,45 @@ def display_board():
     print(board[kk])
 
 
+def check_winner_cols(value):
+  winning_cols=-1
+  cols_avail=find_open_cols()
+  for col in cols_avail():
+    r=lowest_row(col)
+    board[r][col]=value
+    if checkallwinners(value):
+      winning_col=col
+      board[r][col]=0
+      break
+    else:
+      board[r][col]=0
+  return winning_col
+
 
 def playc():
   global turn, gameOver
   # Find which columns are available
   # Consider all the columns
   cols_avail = find_open_cols()
+  center_cols=[3,2,4,1,5,0,6]
+
   #print(cols_avail)
   # Pick up a random column from those that are open
+if action =='regular':
   if len(cols_avail) > 0:
-    col = random.choice(cols_avail)
-    available_row = lowest_row(col)
-    board[available_row][col] = 2  
-  
+
+    col=check_winning_cols(2)
+    if col==-1:
+      for c in center_cols:
+        if c in cols_avail:
+         c=col
+         break
+
+  available_row=lowest_row(col)
+  board[available_row][col]=2
+    
+
+
   DrawBoard()
   # Check for winner and accordingly decide whether next player or game over
   if checkwinner(2):
