@@ -236,3 +236,15 @@ turn = 1
 
 DrawBoard()
 screen.onclick(play)
+
+gameOver = False
+
+if random.random()>0.5:
+  turn =1
+  print("Player's Chance")
+else:
+  turn=2
+  print("Computer's chance")
+  playc()
+
+DrawBoard()  
