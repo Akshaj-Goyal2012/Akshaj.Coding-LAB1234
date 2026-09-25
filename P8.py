@@ -209,12 +209,13 @@ def display_board():
 
 
 def check_winner_cols(value):
-  winning_cols=-1
+  winning_col=-1
   cols_avail=find_open_cols()
-  for col in cols_avail():
+  for col in cols_avail:
     r=lowest_row(col)
     board[r][col]=value
-    if checkallwinners(value):
+
+    if checkwinner(value):
       winning_col=col
       board[r][col]=0
       break
@@ -230,17 +231,24 @@ def playc():
   cols_avail = find_open_cols()
   center_cols=[3,2,4,1,5,0,6]
 
+  if len(cols_avail)==0:
+    gameOver=True
+    print('It is a draw')
+    return
+
   #print(cols_avail)
   # Pick up a random column from those that are open
-if action =='regular':
-  if len(cols_avail) > 0:
 
-    col=check_winning_cols(2)
-    if col==-1:
-      for c in center_cols:
-        if c in cols_avail:
-         c=col
-         break
+  action='regular'
+  if action =='regular':
+    if len(cols_avail) > 0:
+
+      col=check_winner_cols(2)
+      if col==-1:
+        for c in center_cols:
+          if c in cols_avail:
+            col=c
+            break
 
   available_row=lowest_row(col)
   board[available_row][col]=2
@@ -273,4 +281,6 @@ else:
   print("Computer's chance")
   playc()
 
-DrawBoard()  
+DrawBoard()
+
+turtle.done()
