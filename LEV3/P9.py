@@ -88,8 +88,27 @@ def click_on (r,c):
             buttons[loc_xy[0]][loc_xy[1]]["text"] = "*"
             buttons[loc_xy[0]][loc_xy[1]].config(background = 'green', disabledforeground = 'black')
 
+for kk in range(Nrows):
+  buttons.append([])
+  for jj in range(Ncols):
+    b = tk.Button(command = lambda r=kk, c=jj : click_on(r, c))
+    b.grid(row=kk, column = jj)
+    b["width"] = 2
+    b["font"] = 40
+    b['text'] = ' '
+    buttons[kk].append(b)
 
-                      
+
+
+for location in locations:
+  loc_xy = divmod(location, Ncols)
+  field[loc_xy[0]][loc_xy[1]] = 9; 
+
+  nn = Find_Neighbours(loc_xy[0], loc_xy[1])     
+
+for neighbors in nn:
+    if field[neighbors[0]][neighbors[1]] != 9:
+       field[neighbors[0]][neighbors[1]] += 1                
 
 
         
