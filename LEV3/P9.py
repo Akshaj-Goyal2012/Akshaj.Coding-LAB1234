@@ -4,7 +4,7 @@ import random
 #Screen Setup
 window=tk.Tk()
 window.title('Minesweeper')
-window.geometry('400*400')
+window.geometry('500x500')
 Nrows=9
 Ncols=9
 
@@ -28,6 +28,22 @@ colours=['white', 'blue', 'green', 'red', 'dark blue', 'brown', 'cyan', 'black',
 field = [[0 for _ in range(Ncols)] for _ in range(Nrows)]
 
 buttons=[]
+
+Nmines = 10
+
+locations_all = [x for x in range(Nrows*Ncols)]
+locations = random.sample(locations_all, Nmines)
+locations = [53, 62, 28, 38, 52, 25, 39, 64, 2, 69]
+
+def CheckWinner():
+    count=0
+    for r in range (Nrows):
+        for c in range(Ncols):
+            if buttons[r][c]["state"] == "disabled":
+                count = count + 1    
+
+    if count == Nrows*Ncols-Nmines:
+        return True
 
 def openup(r,c):
     if buttons[r][c]['state']=='disabled':
@@ -61,6 +77,18 @@ def click_on (r,c):
         buttons[r][c].config(disabledforeground=colours[field[r][c]])    
 
     else:
+        openup(r,c)
+
+    if CheckWinner():
+        print('Player Won')
+        for location in locations:
+            loc_xy = divmod(location,Ncols) 
+            buttons[loc_xy[0]][loc_xy[1]]['state']='disabled'
+            buttons[loc_xy[0]][loc_xy[1]].config(relief=tk.SUNKEN)
+            buttons[loc_xy[0]][loc_xy[1]]["text"] = "*"
+            buttons[loc_xy[0]][loc_xy[1]].config(background = 'green', disabledforeground = 'black')
+
+
                       
 
 
