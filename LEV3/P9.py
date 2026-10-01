@@ -49,7 +49,7 @@ def openup(r,c):
     if buttons[r][c]['state']=='disabled':
         return
 
-    buttons[r][c]['state']=='disabled'
+    buttons[r][c]['state']='disabled'
     buttons[r][c].config(relief=tk.SUNKEN)
 
     if field[r][c]==0:
@@ -57,8 +57,9 @@ def openup(r,c):
         for nn in neighbours:
             openup(nn[0],nn[1])
     else:
+        buttons[r][c].config(command=lambda: None)
         buttons[r][c]['text'] = str(field[r][c])
-        buttons[r][c].config(disabledforeground=colours[field[r][c]])
+        buttons[r][c].config(fg=colours[field[r][c]])
 
 def click_on (r,c):
     if field[r][c]==10:
@@ -69,13 +70,10 @@ def click_on (r,c):
                 if field[i][j]==10:
                     buttons[i][j]['text']='*'
                     buttons[i][j].config(background='red',disabledforeground='black')
-
     elif field[r][c] !=0:  
-        buttons[r][c]['state'] = 'disabled'
-        buttons[r][c].config(relief=tk.SUNKEN)
+        buttons[r][c].config(relief=tk.SUNKEN, command=lambda: None)
         buttons[r][c]["text"] = str(field[r][c])
-        buttons[r][c].config(disabledforeground=colours[field[r][c]])    
-
+        buttons[r][c].config(fg=colours[field[r][c]]) 
     else:
         openup(r,c)
 
@@ -102,16 +100,16 @@ for kk in range(Nrows):
 
 for location in locations:
   loc_xy = divmod(location, Ncols)
-  field[loc_xy[0]][loc_xy[1]] = 9; 
+  field[loc_xy[0]][loc_xy[1]] = 10;
 
   nn = Find_Neighbours(loc_xy[0], loc_xy[1])     
 
 for neighbors in nn:
-    if field[neighbors[0]][neighbors[1]] != 9:
+    if field[neighbors[0]][neighbors[1]] != 10:
        field[neighbors[0]][neighbors[1]] += 1                
 
 
-        
+tk.mainloop()       
     
                               
 
