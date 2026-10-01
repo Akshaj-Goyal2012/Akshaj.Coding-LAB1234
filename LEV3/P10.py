@@ -157,3 +157,4 @@ for location in locations:
 
     
 # b = tk.Button(command = lambda x=kk, y=jj: clickOn(x,y))
+tk.mainloop()

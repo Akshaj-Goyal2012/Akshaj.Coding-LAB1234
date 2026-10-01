@@ -5,9 +5,29 @@ import random
 window=tk.Tk()
 window.title('Minesweeper')
 window.geometry('500x500')
-Nrows=9
-Ncols=9
+Nrows=10
+Ncols=10
 
+controlFrame=tk.Frame(window, pady =3)
+controlFrame.grid(row=0,column=0)
+
+ResetButton= tk.Button(controlFrame, text ='Reset', command = reset_board)
+ResetButton.pack()
+
+gameFrame=tk.Frame(window)
+gameFrame.grid(row=1, column=0)
+
+
+
+def reset_board():
+    for kk in range(Nrows):
+        for jj in range(Ncols):
+            buttons[kk][jj]['state']='normal'
+            buttons[kk][jj].config(relief=tk.RAISED)
+            buttons[kk][jj]['text']=''
+            buttons[kk][jj].config(bg='#d9d9d9')
+    update_field()        
+reset_board()
 #Neighbours
 def Find_Neighbours(r0,c0):
     neighbours=[]
@@ -23,7 +43,7 @@ def Find_Neighbours(r0,c0):
     neighbours.remove((r0,c0))
     return neighbours
 
-colours=['white', 'blue', 'green', 'red', 'dark blue', 'brown', 'cyan', 'black', 'gray']
+colours=['white', 'blue', 'green', 'red', 'cyan', 'brown', 'cyan', 'black', 'gray']
 
 field = [[0 for _ in range(Ncols)] for _ in range(Nrows)]
 
@@ -71,9 +91,13 @@ def click_on (r,c):
                     buttons[i][j]['text']='*'
                     buttons[i][j].config(background='red',disabledforeground='black')
     elif field[r][c] !=0:  
-        buttons[r][c].config(relief=tk.SUNKEN, command=lambda: None)
+        buttons[r][c].config(
+    relief=tk.SUNKEN,
+    command=lambda: None,
+    disabledforeground=colours[field[r][c]])
+        
         buttons[r][c]["text"] = str(field[r][c])
-        buttons[r][c].config(fg=colours[field[r][c]]) 
+        buttons[r][c]["state"] = "disabled"
     else:
         openup(r,c)
 
@@ -89,7 +113,7 @@ def click_on (r,c):
 for kk in range(Nrows):
   buttons.append([])
   for jj in range(Ncols):
-    b = tk.Button(command = lambda r=kk, c=jj : click_on(r, c))
+    b = tk.Button(gameFrame,command = lambda r=kk, c=jj : click_on(r, c))
     b.grid(row=kk, column = jj)
     b["width"] = 2
     b["font"] = 40
@@ -98,17 +122,24 @@ for kk in range(Nrows):
 
 
 
-for location in locations:
-  loc_xy = divmod(location, Ncols)
-  field[loc_xy[0]][loc_xy[1]] = 10;
-
-  nn = Find_Neighbours(loc_xy[0], loc_xy[1])     
-
-for neighbors in nn:
-    if field[neighbors[0]][neighbors[1]] != 10:
-       field[neighbors[0]][neighbors[1]] += 1                
 
 
+def update_field():
+
+    for kk in range(Nrows):
+        for jj in range(Ncols):
+            field[kk][jj]=0
+    for location in locations:
+        loc_xy = divmod(location, Ncols)
+        field[loc_xy[0]][loc_xy[1]] = 10;
+
+    nn = Find_Neighbours(loc_xy[0], loc_xy[1])     
+
+    for neighbors in nn:
+        if field[neighbors[0]][neighbors[1]] != 10:
+            field[neighbors[0]][neighbors[1]] += 1                
+
+update_field()
 tk.mainloop()       
     
                               
